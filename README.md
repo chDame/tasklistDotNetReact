@@ -11,3 +11,7 @@ This project is a fork of https://github.com/camunda-community-hub/dotnet-custom
 
 This ReadMe should be improved...
 
+## Mails
+
+Mail templating is built on top of Stubble (Mustache implementation) and mail sending is achieved through Gmail. You should then add a client_secrets.json to you project : https://developers.google.com/api-client-library/dotnet/guide/aaa_oauth?hl=fr
+
