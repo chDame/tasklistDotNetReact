@@ -24,6 +24,7 @@ builder.Services.AddTransient(typeof(TaskListService));
 builder.Services.AddTransient(typeof(OperateService));
 builder.Services.AddTransient(typeof(FormService));
 builder.Services.AddTransient(typeof(MailService));
+builder.Services.AddTransient(typeof(TemplateService));
 builder.Services.AddTransient(typeof(ZeebeClientProvider));
 
 builder.Services.BootstrapZeebe(builder.Configuration.GetSection("ZeebeConfiguration"), o => {

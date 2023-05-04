@@ -1,20 +1,4 @@
-﻿using System;
-using GraphQL;
-using System.Threading.Tasks;
-using GraphQL.Client.Http;
-using Microsoft.Extensions.Configuration;
-using System.Net.Http;
-
-using GraphQL.Client.Abstractions;
-using Microsoft.Extensions.Caching.Memory;
-using static tasklistDotNetReact.Models;
-using System.Collections.Generic;
-using Newtonsoft.Json;
-using System.Text.Json;
-using System.Xml;
-using System.Xml.Linq;
-using System.Net.Http.Headers;
-
+﻿
 namespace tasklistDotNetReact.Services
 {
   public class FormService
