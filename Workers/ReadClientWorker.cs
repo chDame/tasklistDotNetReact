@@ -4,18 +4,18 @@ using Zeebe.Client.Accelerator.Attributes;
 
 namespace tasklistDotNetReact.Services
 {
-  [JobType("mock")]
-  public class MockZeebeWorker : IAsyncZeebeWorkerWithResult<JsonNode>
+  [JobType("readClientData")]
+  public class ReadClientWorker : IAsyncZeebeWorkerWithResult<JsonNode>
   {
-    public MockZeebeWorker()
+    private readonly MockService mockService;
+    public ReadClientWorker(MockService mockService)
     {
+      this.mockService = mockService;
     }
     public async Task<JsonNode> HandleJob(ZeebeJob job, CancellationToken cancellationToken)
     {
-      // get variables as declared (SimpleJobPayload)
       JsonNode variables = job.getVariables<JsonNode>();
-      variables["mock"] = "executed";
-      return variables;
+      return mockService.FindByName("clients", variables["client"].ToString());
     }
   }
 }

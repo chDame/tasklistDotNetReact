@@ -98,6 +98,9 @@ function AdminNavbar() {
             <NavLink className={({ isActive }) =>
               isActive ? "text-light menu-item selected" : "text-light menu-item"
             } to="/admin/templates">{t("Templates")}</NavLink>
+            <NavLink className={({ isActive }) =>
+              isActive ? "text-light menu-item selected" : "text-light menu-item"
+            } to="/admin/mocks">{t("Mocks")}</NavLink>
             {false && orgEnabled && user!.profile === 'Admin' ?
               <NavLink className={({ isActive }) =>
                 isActive ? "text-light menu-item selected" : "text-light menu-item"
