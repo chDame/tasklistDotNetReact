@@ -18,6 +18,7 @@ import AdminForms from "./pages/AdminForms";
 import AdminThemes from './pages/AdminThemes';
 import FeelTester from './pages/FeelTester';
 import AdminDmns from './pages/AdminDmns';
+import AdminMocks from './pages/AdminMocks';
 import WorkerList from './pages/WorkerList';
 import ElementTemplate from './pages/ElementTemplate';
 import './assets/css/bootstrap.min.css';
@@ -74,6 +75,7 @@ function App() {
             <Route path="feel" element={<FeelTester />} />
             <Route path="dmn" element={<AdminDmns />} />
             <Route path="templates" element={<WorkerList />} />
+            <Route path="mocks" element={<AdminMocks />} />
             <Route path="elementTemplate/*" element={<ElementTemplate />} />
             <Route path="*" element={<Undefined />} />
           </Route>
