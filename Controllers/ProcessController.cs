@@ -50,18 +50,14 @@ namespace tasklistDotNetReact.Controllers
     }
 
     [HttpPost("{bpmnProcessId}/start")]
-    public async Task<JsonResult> CreateProcessInstance(string bpmnProcessId, [FromBody] Dictionary<string, string> variables)
+    public async Task<JsonResult> CreateProcessInstance(string bpmnProcessId, [FromBody] Dictionary<string, object> variables)
     {
       var processInstance = await _zeebeClientProvider.GetZeebeClient()
           .NewCreateProcessInstanceCommand()
           .BpmnProcessId(bpmnProcessId)
           .LatestVersion()
-          .Variables(JsonConvert.SerializeObject(variables))
+          .Variables(System.Text.Json.JsonSerializer.Serialize(variables))
           .Send();
-
-
-      //Refer below - setting new procecss variables
-      await _zeebeClientProvider.GetZeebeClient().NewSetVariablesCommand(processInstance.ProcessInstanceKey).Variables("{\"email\":\"jothikiruthika.viswanathan@camunda.com\" }").Local().Send();
 
       return new JsonResult(new { ProcessInstanceKey = processInstance.ProcessInstanceKey });
     }

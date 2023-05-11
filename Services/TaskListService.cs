@@ -302,14 +302,14 @@ namespace tasklistDotNetReact.Services
       return mutationResponse.Data.unClaimTask;
     }
 
-    public async Task<Models.Task> CompleteTask(string taskId, Dictionary<string, string> variables)
+    public async Task<Models.Task> CompleteTask(string taskId, Dictionary<string, object> variables)
     {
       var graphQLClient = await _taskListClientProvider.GetTaskListClientAsync();
 
       var varInputs = new List<VariableInput>();
-      foreach (KeyValuePair<string, string> value in variables)
+      foreach (KeyValuePair<string, object> value in variables)
       {
-        varInputs.Add(new VariableInput { name = value.Key, value = JsonConvert.SerializeObject(value.Value) });
+        varInputs.Add(new VariableInput { name = value.Key, value = System.Text.Json.JsonSerializer.Serialize(value.Value) });
       }
 
       var mutationRequest = new GraphQLRequest

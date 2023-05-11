@@ -49,7 +49,7 @@ namespace tasklistDotNetReact.Controllers
     }
 
     [HttpPost("{taskId}")]
-    public async Task<JsonResult> complete(string taskId, [FromBody] Dictionary<string, string> variables)
+    public async Task<JsonResult> complete(string taskId, [FromBody] Dictionary<string, object> variables)
     {
       Models.Task task = await _taskListService.CompleteTask(taskId, variables);
 

@@ -7,7 +7,18 @@ import { Component, FC } from 'react';
 
 function FormResolver(formViewer: IFormViewer) {
   const FormFinder: FC<IFormViewer> = formViewer.schema && formViewer.schema.generator=='formIo' ? FormIoViewer : formService.customFormExists(formViewer.formKey) ? formService.getForm(formViewer.formKey)! : FormJsViewer;
-  return (<FormFinder formKey={formViewer.formKey} schema={formViewer.schema} variables={formViewer.variables} disabled={formViewer.disabled}></FormFinder>)
+  
+  let variables:any = undefined;
+  
+    if (formViewer.variables) {
+      variables = {};
+      for (let i=0;i<formViewer.variables.length;i++) {
+		let variable = formViewer.variables[i];
+        variables[variable.name]= JSON.parse(variable.value);
+      }
+    }
+  
+  return (<FormFinder formKey={formViewer.formKey} schema={formViewer.schema} variables={variables} disabled={formViewer.disabled}></FormFinder>)
 }
 
 export default FormResolver;
