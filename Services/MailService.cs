@@ -79,7 +79,6 @@ namespace tasklistDotNetReact.Services
       var dynamicVar = JsonConvert.DeserializeObject<dynamic>(variables.ToJsonString())!;
       var stubble = new StubbleBuilder().Build();
       string content = stubble.Render(mailTemplate, dynamicVar);
-      var message = new Message();
       var mailMessage = new MailMessage();
       mailMessage.To.Add(to);
       mailMessage.ReplyToList.Add(to);
@@ -98,7 +97,7 @@ namespace tasklistDotNetReact.Services
 
     private static string Base64UrlEncode(string input)
     {
-      var inputBytes = Encoding.UTF8.GetBytes(input);
+      var inputBytes = Encoding.Latin1.GetBytes(input);
       // Special "url-safe" base64 encode.
       return Convert.ToBase64String(inputBytes);
     }
