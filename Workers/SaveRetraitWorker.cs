@@ -16,7 +16,7 @@ namespace tasklistDotNetReact.Services
     {
       JsonNode variables = job.getVariables<JsonNode>();
       variables["statut"] = "validée";
-      mockService.Save("demandes", variables["client"].ToString()+new DateTime().ToString(), variables);
+      mockService.Save("demandes", variables["client"].ToString()+ DateTimeOffset.Now.ToUnixTimeSeconds().ToString(), variables);
       return variables;
     }
   }
