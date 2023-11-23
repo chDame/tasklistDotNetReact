@@ -18,7 +18,7 @@
     <PackageReference Include="Google.Apis.Gmail.v1" Version="1.60.0.3035" />
     <PackageReference Include="GraphQL.Client" Version="6.0.0" />
     <PackageReference Include="GraphQL.Client.Serializer.Newtonsoft" Version="6.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="6.0.16" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="6.0.25" />
     <PackageReference Include="MimeKit" Version="4.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Stubble.Core" Version="1.10.8" />
