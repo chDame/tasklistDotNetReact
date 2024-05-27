@@ -14,16 +14,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Google.Apis.Auth" Version="1.60.0" />
-    <PackageReference Include="Google.Apis.Gmail.v1" Version="1.60.0.3035" />
-    <PackageReference Include="GraphQL.Client" Version="6.0.0" />
-    <PackageReference Include="GraphQL.Client.Serializer.Newtonsoft" Version="6.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="6.0.16" />
-    <PackageReference Include="MimeKit" Version="4.0.0" />
+    <PackageReference Include="Google.Apis.Auth" Version="1.68.0" />
+    <PackageReference Include="Google.Apis.Gmail.v1" Version="1.68.0.3427" />
+    <PackageReference Include="GraphQL.Client" Version="6.1.0" />
+    <PackageReference Include="GraphQL.Client.Serializer.Newtonsoft" Version="6.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="6.0.30" />
+    <PackageReference Include="MimeKit" Version="4.6.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Stubble.Core" Version="1.10.8" />
-    <PackageReference Include="zb-client" Version="1.3.0" />
-    <PackageReference Include="zb-client-accelerator" Version="1.0.2" />
+    <PackageReference Include="zb-client" Version="2.5.0" />
+    <PackageReference Include="zb-client-accelerator" Version="2.1.8" />
   </ItemGroup>
 
   <ItemGroup>
